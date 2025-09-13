@@ -98,6 +98,15 @@
             <artifactId>smack-sasl-provided</artifactId>
             <version>${smack.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>

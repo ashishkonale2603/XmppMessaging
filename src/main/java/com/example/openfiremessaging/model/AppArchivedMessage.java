@@ -1,11 +1,8 @@
 package com.example.openfiremessaging.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+import java.time.Instant;
 
 @Entity
 @Table(name = "app_message_archive")
@@ -20,12 +17,17 @@ public class AppArchivedMessage {
 
     private String toJid;
 
-    private String sentDate;
+    private Instant sentDate;
 
     private String body;
 
-    private String fileName;
+    private String mediaName;
 
-    private String media;
+    private Integer messageType;
+
+    private String mediaAdd;
+    private String fileAdd;
+
+    private String fileName;
 }
 

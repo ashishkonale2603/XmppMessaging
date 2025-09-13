@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -20,8 +19,9 @@ public class MessageController {
 
     private final MessageService messageService;
 
-    @PostMapping("/send")
+    @PostMapping(path = "/send")
     public ResponseEntity<?> sendMessage(@Valid @RequestBody MessageDto messageDto) {
+        // The file from the request is now inside messageDto.getFile()
         try {
             messageService.sendMessage(messageDto);
             return ResponseEntity.ok("Message sent and archived successfully");
@@ -44,4 +44,3 @@ public class MessageController {
         }
     }
 }
-
